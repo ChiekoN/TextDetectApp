@@ -1,0 +1,31 @@
+# This project is created by following this tutorial:
+https://blog.miguelgrinberg.com/post/designing-a-restful-api-with-python-and-flask
+
+
+
+# To run flask as a HTTPS server:
+
+```
+$ pip install pyopenssl
+```
+```
+> if __name__ == "__main__":
+>    app.run(ssl_context='adhoc')
+>            ^^^^^^^^^^^^^^^^^^^^
+```
+or,
+
+```
+$ flask run --cert=adhoc
+```
+
+**SEE MORE**: https://blog.miguelgrinberg.com/post/running-your-flask-application-over-https
+
+
+# To test REST API by curl:
+```
+$ curl -i http://localhost:5000/todo
+```
+
+# Tutorial For Client Side:
+https://blog.miguelgrinberg.com/post/writing-a-javascript-rest-client

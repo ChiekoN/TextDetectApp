@@ -1,0 +1,28 @@
+#topbar {
+    background-color: #0064cd;
+    padding-left: 20px;
+}
+.container2 {
+    margin: 1.5em;
+    padding-top: 40px;
+}
+
+.pad {
+    /* padding-top: 10px; */
+    /* padding-bottom: 10px; */
+    margin-top: 20px;
+    margin-bottom: 20px;
+}
+
+#cap {
+    display: none;
+}
+
+#player {
+    /* visibility: hidden; */
+    display: none;
+
+}
+#disp-area2 {
+    display: none;
+}

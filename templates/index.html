@@ -1,0 +1,108 @@
+<!DOCTYPE html>
+<html>
+<head>
+<title>Text Reader</title>
+<!-- coming from Bootstrap, for responsive design -->
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<!-- importing Bootstrap files through CDN 
+  twitter bootstrap : https://getbootstrap.com/1.4.0/ -->
+<link rel="stylesheet" href="https://getbootstrap.com/1.4.0/assets/css/bootstrap.min.css">
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
+<script type=text/javascript src="{{ url_for('static', filename='camera.js') }}"></script>
+<link rel="stylesheet" href="{{ url_for('static', filename='style.css') }}">
+</head>
+
+<body  onload=loadCamera()>
+    <div id="topbar" class="topbar">
+        <div class="container">
+            <a class="brand" href="#">Text Reader</a>
+        </div>
+    </div>
+    <div class="container container2">
+        <div class="content">
+            <h3>Text Reader</h3>
+            <p>Read texts from the camera!</p>
+            <div id="disp-area">
+                <div>
+                    <video id="player" autoplay></video>
+                </div>
+                <div>
+                    <button id="cap" class="btn large success pad" onclick="clickCapture()">Capture</button>
+                </div>           
+            </div>
+            <div id="disp-area2">
+                <div class="row">
+                    <div class="span6">
+                      <div><canvas id="snapshot" class="frame"></canvas></div>
+                      <div><button id="camback" class="btn large info pad" onclick=loadCamera()>Back to Camera</button></div>
+                    </div>
+                    <div class="span10">
+                        <h4>Result will be shown here!</h4>
+                        <ul>
+                            <li>Product A</li>
+                            <li>Product B</li>
+                            <li>Product C</li>
+                        </ul>
+                    </div>
+                    
+                </div>
+            </div>
+        </div>
+    </div>
+
+    
+
+
+
+<!--
+    <div class="container2">
+        <h2>Canvas Experiment</h2>
+        <canvas id="canvas" width="300" height="200"></canvas>
+        <button id="btn" type="button" onclick="sendImage()">Save this canvas</button>
+    </div>
+    <script type="text/javascript">
+        // Draw canvas
+        var r = Math.floor(Math.random() * 255);
+        var g = Math.floor(Math.random() * 255);
+        var b = Math.floor(Math.random() * 255);
+        var r2 = Math.floor(Math.random() * 255);
+        var g2 = Math.floor(Math.random() * 255);
+        var b2 = Math.floor(Math.random() * 255);
+        console.log("rgb = " + r + ", " + g + ", " + b)
+
+        var canvas = document.getElementById('canvas');
+        var ctx = canvas.getContext('2d');
+
+        //ctx.fillStyle = 'rgb(r, g, b)';
+        ctx.fillStyle = 'rgb(' + r + ', ' + g + ', ' + b + ')';
+        ctx.fillRect(10, 10, 50, 50);
+        ctx.fillStyle = 'rgba(' + r2 + ', ' + g2 + ', ' + b2 + '0.5)';
+        ctx.fillRect(30, 30, 50, 50);
+
+        // Send image to save on a server
+        function sendImage() {
+            var dataURL = canvas.toDataURL("image/png");
+
+            console.log("dataURL = " + dataURL);
+            //var fd = new FormData();
+            //fd.append("image", dataURL);
+            //fd.append("check", "ok");
+
+            $.ajax({
+                method: 'POST',
+                url: '/canvas',
+                data: { 'image': dataURL, 'check': 'ok'}
+                //processData: false,
+                //processType: false
+            })
+            .done(function(msg) {
+                console.log("Save canvas done!")
+            })
+            .fail(function() {
+                console.log("Save canvas ERROR!")
+            });
+        }
+    </script>
+-->
+</body>
+</html>
