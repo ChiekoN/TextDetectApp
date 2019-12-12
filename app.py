@@ -7,6 +7,8 @@ from flask import Flask, jsonify, abort, make_response, request, url_for, \
 import base64 # to decode MIME base64 encoded by canvas.toDataURI() in JavaScript
 import mimetypes
 
+from textdetect import textdetect as td
+
 app = Flask(__name__)
 
 tasks = [
@@ -62,12 +64,18 @@ def save_image():
     print(" ----- ")
     
     image_data = request.form['image']
-    print("--- image_data = {}".format(image_data))
+    #print("--- image_data = {}".format(image_data))
     image_data_str = image_data.split(',')[1]
     
     image_data_decode = base64.b64decode(image_data_str)
-    with open("canvas.png", "bw") as f:
-        f.write(image_data_decode)
+    #with open("canvas.png", "bw") as f:
+    #    f.write(image_data_decode)
+
+    text_list = td.text_detect(image_data_decode)
+    print(" === Finish text_detect ===")
+    print(text_list)
+    print(" ======== ")
+
     return redirect(url_for('index'))
     
 
