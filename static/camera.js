@@ -1,7 +1,15 @@
 function loadCamera() {
+    
+    // Erase 'disp-area2' and initialize other information
     document.getElementById('disp-area2').style.display = "none";
+    var resultList = document.getElementById('result-list');
+    while (resultList.firstChild) {
+        console.log("resultList = " + resultList.firstChild);
+        resultList.removeChild(resultList.firstChild);
+    }
+    
+    // Prepare user camera
     var player = document.getElementById('player');
-
     console.log("player = " + player);
  
     var handleSuccess = function(stream){
@@ -56,8 +64,19 @@ function clickCapture() {
         //processData: false,
         //processType: false
     })
-    .done(function(msg) {
-        console.log("Save canvas done!")
+    .done( function( response ) {
+        if(response.length == 0) {
+            $( "#result-list" ).append( "<li><p style={color:red;}>No item found.</p></li>" );
+
+        } else {
+
+            for(let i = 0; i < response.length; i++){
+                item = response[i];
+                itemId = item['id'];
+                itemName = item['name'];
+                $( "#result-list" ).append( "<li>[" + itemId + "] " + itemName + "</li>" );
+            }
+        }
     })
     .fail(function() {
         console.log("Save canvas ERROR!")

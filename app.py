@@ -81,7 +81,8 @@ def save_image():
     print("\n === Matched item ===")
     print(result)
 
-    return redirect(url_for('index'))
+    #return redirect(url_for('index'))
+    return jsonify(result)
     
 
 
