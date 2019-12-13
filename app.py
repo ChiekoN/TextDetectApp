@@ -8,6 +8,7 @@ import base64 # to decode MIME base64 encoded by canvas.toDataURI() in JavaScrip
 import mimetypes
 
 from textdetect import textdetect as td
+from database import search_items
 
 app = Flask(__name__)
 
@@ -74,7 +75,11 @@ def save_image():
     text_list = td.text_detect(image_data_decode)
     print(" === Finish text_detect ===")
     print(text_list)
-    print(" ======== ")
+
+    result = search_items(text_list)
+
+    print("\n === Matched item ===")
+    print(result)
 
     return redirect(url_for('index'))
     
