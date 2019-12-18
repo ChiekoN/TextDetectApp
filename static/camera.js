@@ -57,7 +57,7 @@ function clickCapture() {
     })
     .done( function( response ) {
         if(response.length == 0) {
-            $( "#result-list" ).append( "<li><p style={color:red;}>No item found.</p></li>" );
+            $( "#disp-area2 h5" ).append( "<small style=\"color:red;\">No item found.</small>" );
 
         } else {
 
@@ -65,7 +65,7 @@ function clickCapture() {
                 item = response[i];
                 itemId = item['id'];
                 itemName = item['name'];
-                $( "#result-list" ).append( "<li>[" + itemId + "] " + itemName + "</li>" );
+                $( "#result-list" ).append( "<option value=\"" + itemId + "\">[ " + itemId + " ]  " + itemName + "</option>" );
             }
         }
     })
