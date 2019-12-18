@@ -39,66 +39,10 @@
                     <div id="result" class="span10">
                         <h4>Result will be shown here!</h4>
                         <ol id="result-list"></ol>
-                    </div>
-                    
+                    </div>                    
                 </div>
             </div>
         </div>
     </div>
-
-    
-
-
-
-<!--
-    <div class="container2">
-        <h2>Canvas Experiment</h2>
-        <canvas id="canvas" width="300" height="200"></canvas>
-        <button id="btn" type="button" onclick="sendImage()">Save this canvas</button>
-    </div>
-    <script type="text/javascript">
-        // Draw canvas
-        var r = Math.floor(Math.random() * 255);
-        var g = Math.floor(Math.random() * 255);
-        var b = Math.floor(Math.random() * 255);
-        var r2 = Math.floor(Math.random() * 255);
-        var g2 = Math.floor(Math.random() * 255);
-        var b2 = Math.floor(Math.random() * 255);
-        console.log("rgb = " + r + ", " + g + ", " + b)
-
-        var canvas = document.getElementById('canvas');
-        var ctx = canvas.getContext('2d');
-
-        //ctx.fillStyle = 'rgb(r, g, b)';
-        ctx.fillStyle = 'rgb(' + r + ', ' + g + ', ' + b + ')';
-        ctx.fillRect(10, 10, 50, 50);
-        ctx.fillStyle = 'rgba(' + r2 + ', ' + g2 + ', ' + b2 + '0.5)';
-        ctx.fillRect(30, 30, 50, 50);
-
-        // Send image to save on a server
-        function sendImage() {
-            var dataURL = canvas.toDataURL("image/png");
-
-            console.log("dataURL = " + dataURL);
-            //var fd = new FormData();
-            //fd.append("image", dataURL);
-            //fd.append("check", "ok");
-
-            $.ajax({
-                method: 'POST',
-                url: '/canvas',
-                data: { 'image': dataURL, 'check': 'ok'}
-                //processData: false,
-                //processType: false
-            })
-            .done(function(msg) {
-                console.log("Save canvas done!")
-            })
-            .fail(function() {
-                console.log("Save canvas ERROR!")
-            });
-        }
-    </script>
--->
 </body>
 </html>

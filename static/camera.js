@@ -14,8 +14,6 @@ function loadCamera() {
  
     var handleSuccess = function(stream){
         player.srcObject = stream;
-        //document.getElementById('player').style.visibility = "visible";
-        //document.getElementById('cap').style.display = "block";
         document.getElementById('disp-area').style.display = "block";
         document.getElementById('player').style.display = "block";        
         document.getElementById('cap').style.display = "block";
@@ -36,10 +34,8 @@ function loadCamera() {
 
 }
 
-//window.onload = loadCamera();
 function clickCapture() {
     var player = document.getElementById('player');
-    //var snapshotCanvas = document.getElementById('snapshot');
 
     var tempCanvas = document.createElement('canvas');
     tempCanvas.width = player.videoWidth;
@@ -51,16 +47,11 @@ function clickCapture() {
 
     // Send image to save on a server
     var dataURL = tempCanvas.toDataURL("image/png");
-
-    console.log("dataURL = " + dataURL);
-    //var fd = new FormData();
-    //fd.append("image", dataURL);
-    //fd.append("check", "ok");
-
+ 
     $.ajax({
         method: 'POST',
         url: '/canvas',
-        data: { 'image': dataURL, 'check': 'ok'}
+        data: { 'image': dataURL }
         //processData: false,
         //processType: false
     })
@@ -105,11 +96,7 @@ function clickCapture() {
     
     // Delete disp-area after calculating player size.
     document.getElementById('disp-area').style.display = "none";
-    //document.getElementById('cap').style.display = "none";
     document.getElementById('disp-area2').style.display = "block";
-    //document.getElementById('camback').style.display = "block";
- 
-    //context.drawImage(player, 0, 0, newW, newH);
 
     // To output the canvas to image data : HTMLCanvasElement.toBlob()
     // See: https://developer.mozilla.org/en-US/docs/Web/API/HTMLCanvasElement
