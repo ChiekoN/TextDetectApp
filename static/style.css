@@ -2,9 +2,20 @@
     background-color: #0064cd;
     padding-left: 20px;
 }
+
+.topcontainer {
+    margin-left: 0px;
+    max-width: 940px;
+    width: 100%;
+}
+
 .container2 {
-    margin: 1.5em;
-    padding-top: 40px;
+    /* margin: 20px; */
+    padding-top: 60px;
+    padding-left: 20px;
+    padding-right: 20px;
+    max-width: 940px;
+    width: 100%;
 }
 
 .pad {
@@ -21,8 +32,19 @@
 #player {
     /* visibility: hidden; */
     display: none;
-
+    max-width: 90%;
+    padding-top: 20px;
+    padding-bottom: 0px;
 }
+
+#disp-area {
+    max-width: 100%;
+}
+
 #disp-area2 {
     display: none;
+}
+
+#result {
+    margin-top: 30px; 
 }

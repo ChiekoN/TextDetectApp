@@ -14,7 +14,7 @@
 
 <body  onload=loadCamera()>
     <div id="topbar" class="topbar">
-        <div class="container">
+        <div class="container topcontainer">
             <a class="brand" href="#">Text Reader</a>
         </div>
     </div>
@@ -30,17 +30,15 @@
                     <button id="cap" class="btn large success pad" onclick="clickCapture()">Capture</button>
                 </div>           
             </div>
-            <div id="disp-area2">
-                <div class="row">
-                    <div class="span6">
-                        <div><img src="" alt="Snapshot" id="snapshot" class="frame"></div>
-                        <div><button id="camback" class="btn large info pad" onclick=loadCamera()>Back to Camera</button></div>
-                    </div>
-                    <div id="result" class="span10">
-                        <h4>Result will be shown here!</h4>
-                        <ol id="result-list"></ol>
-                    </div>                    
+            <div id="disp-area2">                
+                <div>
+                    <div><img src="" alt="Snapshot" id="snapshot" class="frame"></div>
+                    <div><button id="camback" class="btn large info pad" onclick=loadCamera()>Back to Camera</button></div>
                 </div>
+                <div id="result">
+                    <h4>Result will be shown here!</h4>
+                    <ol id="result-list"></ol>
+                </div>                    
             </div>
         </div>
     </div>
