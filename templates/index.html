@@ -1,50 +1,42 @@
-<!DOCTYPE html>
-<html>
-<head>
-<title>Text Reader</title>
-<!-- coming from Bootstrap, for responsive design -->
-<meta name="viewport" content="width=device-width, initial-scale=1.0">
-<!-- importing Bootstrap files through CDN 
-  twitter bootstrap : https://getbootstrap.com/1.4.0/ -->
-<link rel="stylesheet" href="https://getbootstrap.com/1.4.0/assets/css/bootstrap.min.css">
-<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
-<script type=text/javascript src="{{ url_for('static', filename='camera.js') }}"></script>
-<link rel="stylesheet" href="{{ url_for('static', filename='style.css') }}">
-</head>
+{% extends 'base.html' %}
 
-<body  onload=loadCamera()>
-    <div id="topbar" class="topbar">
-        <div class="container topcontainer">
-            <a class="brand" href="#">Text Reader</a>
+{% block head %}
+    {{ super() }}
+    <script>
+        $(window).ready(loadCamera);
+    </script>
+{% endblock %}
+
+{% block topbar %}
+    {{ super() }}
+{% endblock %}
+{% block content %}
+<div class="container container2">
+    <div class="content">
+        <h3>Text Reader</h3>
+        <p>Read texts from the camera!</p>
+        <div id="disp-area">
+            <div>
+                <video id="player" autoplay></video>
+            </div>
+            <div>
+                <button id="cap" class="btn large success pad" onclick="clickCapture()">Capture</button>
+            </div>           
+        </div>
+        <div id="disp-area2">
+            <div class="inner-container">              
+                <div>
+                    <div><img src="" alt="Snapshot" id="snapshot" class="pad"></div>                        
+                </div>
+                <h5>Matched Items  </h5>
+                <div id="result">
+                    <label for="result-list">[ ID ] Product Name</label>
+                    <select name="products" id="result-list" size=3 onchange=enableShowDataButton()></select>
+                </div>
+                <button id="showdata" class="btn large success pad" disabled onclick=showItemData()>Show Item Data</button>
+                <button id="camback" class="btn large info pad" style="float:right;" onclick=loadCamera()>Back to Camera</button>
+            </div>
         </div>
     </div>
-    <div class="container container2">
-        <div class="content">
-            <h3>Text Reader</h3>
-            <p>Read texts from the camera!</p>
-            <div id="disp-area">
-                <div>
-                    <video id="player" autoplay></video>
-                </div>
-                <div>
-                    <button id="cap" class="btn large success pad" onclick="clickCapture()">Capture</button>
-                </div>           
-            </div>
-            <div id="disp-area2">
-                <div class="inner-container">              
-                    <div>
-                        <div><img src="" alt="Snapshot" id="snapshot" class="pad"></div>                        
-                    </div>
-                    <h5>Matched Items  </h5>
-                    <div id="result">
-                        <label for="result-list">[ ID ] Product Name</label>
-                        <select name="products" id="result-list" size=3 onchange=enableShowDataButton()></select>
-                    </div>
-                    <button id="showdata" class="btn large success pad" disabled onclick=showItemData()>Show Item Data</button>
-                    <button id="camback" class="btn large info pad" style="float:right;" onclick=loadCamera()>Back to Camera</button>
-                </div>
-            </div>
-        </div>
-    </div>
-</body>
-</htmlp
+</div>
+{% endblock %}

@@ -76,3 +76,11 @@ def search_items(word_list):
     #return item_list # Mock result
     return found_item_list
 
+def find_item(item_id):
+    ''' NOTE: item_id is unique in item_list. '''
+    
+    for item in item_list:
+        if item['id'] == item_id:
+            return item
+    
+    return {}

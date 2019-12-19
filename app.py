@@ -8,7 +8,7 @@ import base64 # to decode MIME base64 encoded by canvas.toDataURI() in JavaScrip
 import mimetypes
 
 from textdetect import textdetect as td
-from database import search_items
+from database import search_items, find_item
 
 app = Flask(__name__)
 
@@ -35,6 +35,10 @@ def save_image():
 
     return jsonify(result)
 
+@app.route('/data/<item_id>', methods = ['GET'])
+def show_data(item_id):
+    data = find_item()
+    return render_template('data.html', item_id=item_id, data=data)
 
 
 if __name__ == '__main__':
