@@ -47,9 +47,14 @@
     max-width: 100%;
 }
 
+.inner-container {
+    width :90%;
+}
+
 #result {
     margin-top: 10px;
-    width: 90%;
+    /* width: 90%; */
+    width: 100%;
     /* height: 150px; */
     /* overflow: scroll; */
     border: 1px solid #505050;
@@ -79,35 +84,4 @@
     padding-top: 6px;
     padding-left: 10px;    
 } 
-
-/*
-.tbl {
-    width: 100%;
-}
-
-.tbl th {
-    border-bottom: 1px solid #808080;
-    position: sticky;
-    top: 0;
-    background-color: #ffffff;
-}
-
-.th1 {
-    width: 20%;
-}
-
-.th2 {
-    width: 80%;
-}
-
-.tbl tbody tr:focus {
-    background-color: #449dfd; 
-}
-
-
-.tbl tbody tr:hover {
-    background-color: #93e0ff; 
-}*/
-
-
 
