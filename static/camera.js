@@ -17,7 +17,7 @@ function loadCamera() {
         document.getElementById('disp-area').style.display = "block";
         document.getElementById('player').style.display = "block";        
         document.getElementById('cap').style.display = "block";
-    }
+    };
 
     constrains = {
                     audio: false,
@@ -94,6 +94,10 @@ function clickCapture() {
         newImg.width = newW;
     });
     
+    // Stop all video streams
+    var videoTracks = player.srcObject.getVideoTracks();
+    videoTracks.forEach(function(track) {track.stop(); console.log("video stopped!");});
+
     // Delete disp-area after calculating player size.
     document.getElementById('disp-area').style.display = "none";
     document.getElementById('disp-area2').style.display = "block";
