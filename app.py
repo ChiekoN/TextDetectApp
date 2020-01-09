@@ -29,11 +29,9 @@ def save_image():
     print(" === Finish text_detect ===")
     print(text_list)
 
-    result = search_items(text_list)
-    print("\n === Matched item ===")
-    print(result)
+    text_list2 = [{'text': t['text'], 'conf': str(t['conf'])} for t in text_list]
 
-    return jsonify(result)
+    return jsonify(text_list2)
 
 @app.route('/data/<item_id>', methods = ['GET'])
 def show_data(item_id):

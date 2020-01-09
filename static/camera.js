@@ -57,15 +57,15 @@ function clickCapture() {
     })
     .done( function( response ) {
         if(response.length == 0) {
-            $( "#result-list" ).append( "<option value=\"no_item\" disabled> (No item found.) </option>" );
+            $( "#result-list" ).append( "<option value=\"no_text\" disabled> (No text found.) </option>" );
 
         } else {
 
             for(let i = 0; i < response.length; i++){
-                item = response[i];
-                itemId = item['id'];
-                itemName = item['name'];
-                $( "#result-list" ).append( "<option value=\"" + itemId + "\">[ " + itemId + " ]  " + itemName + "</option>" );
+                detection = response[i];
+                detectConf = detection['conf'];
+                detectText = detection['text'];
+                $( "#result-list" ).append( "<option value=\"text" + i + "\">" + detectText + " (" + detectConf + ")</option>" );
             }
         }
     })
