@@ -29,7 +29,23 @@ function loadCamera() {
         .then(handleSuccess)
         .catch(function(err){
             console.log("Camera open error: " + err);
-            ducument.getElementById('disp-area').innerHTML = "Camera open error:" + err;
+            //document.getElementById('disp-area').innerHTML = "Camera open error:" + err;
+            var cameraError = document.createElement("div");
+            cameraError.className = "alert-message block-message warning";
+            var cameraErrorMsg = document.createElement("p");
+            cameraErrorMsg.innerText = "Camera open error. (" + err + ")";
+            var cameraErrorMsg2 = document.createElement("p");
+            cameraErrorMsg2.innerText = "Please make sure the camera is available.";
+            cameraError.appendChild(cameraErrorMsg);
+            cameraError.appendChild(cameraErrorMsg2);
+            var btnReload = document.createElement("button");
+            btnReload.className = "btn small pad";
+            btnReload.innerText = "Retry";
+            btnReload.onclick = function () {
+                window.location.reload();
+            }
+            cameraError.appendChild(btnReload);
+            document.getElementById('disp-area').appendChild(cameraError);
         });
 
 }
