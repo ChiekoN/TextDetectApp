@@ -1,6 +1,15 @@
 #topbar {
     background-color: #0064cd;
     padding-left: 20px;
+    width: calc(100% - 20px);
+}
+
+.topbar p {
+    color: #ffffff;
+}
+
+.topbar .brand {
+    padding-right: 30px;
 }
 
 .topcontainer {
@@ -16,7 +25,7 @@
     padding-left: 20px;
     padding-right: 20px;
     max-width: 940px;
-    width: 100%;
+    width: calc(100% - 40px);
 }
 
 .pad {
@@ -48,7 +57,7 @@
 }
 
 .inner-container {
-    width :90%;
+    width :100%;
     max-width: 600px;
 }
 
