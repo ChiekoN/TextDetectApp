@@ -106,28 +106,3 @@ function clickCapture() {
     // See: https://developer.mozilla.org/en-US/docs/Web/API/HTMLCanvasElement
     // Example: <output> = shapshotCanvas.toBlob()...
 }
-
-function enableShowDataButton() {
-    if(document.getElementById("result-list").selectedIndex < 0){
-        // Disable button
-        document.getElementById("showdata").disabled = true;
-    } else {
-        // enable button
-        document.getElementById("showdata").disabled = false;
-    }
-}
-
-function showItemData() {
-
-    // TODO: POST this item to the server and redirect to the page of this item.
-
-    var selectList = document.getElementById("result-list");
-    var idx = selectList.selectedIndex;
-
-    if(idx < 0){
-        console.log("Nothing selected : idx = " + idx)
-    } else {
-        console.log("Selected: Index = " + idx + ", value = " + 
-                    selectList.options[idx].value + ", label = " + selectList.options[idx].label);
-    }
-}
