@@ -32,7 +32,11 @@
                     <label for="result-list">Text ( Confidence )</label>
                     <select name="products" id="result-list" size=5 disabled></select>
                 </div>
-                <button id="camback" class="btn large info pad" style="float:right;" onclick=loadCamera()>Back to Camera</button>
+                <div class="pad">
+                    <p><b>NOTE : </b><i>Confidence</i> means how much lilely the object detected in the image is TEXT, 
+                        not the accuracy of the word.</p>
+                </div>
+                <button id="camback" class="btn large info" style="float:right;" onclick=loadCamera()>Back to Camera</button>
             </div>
         </div>
     </div>
