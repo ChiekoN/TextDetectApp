@@ -11,47 +11,45 @@ This is a simple little web application that captures an image from the camera a
 An image is captured on the browser, then it is sent to the server. In the server, the image data is firstly input into **EAST text detection DNN model**, which outputs areas detected as text area. Next, each text area is read by **tesseract OCR**. Words interpreted by tesseract OCR are returned to the client and are shown in the list.
 
 - Client side
- - HTML
- - CSS
- - JavaScript
- - JQuery(Ajax)
- - [Twitter Bootstrap 1.4.0](https://getbootstrap.com/1.4.0/)
+  - HTML
+  - CSS
+  - JavaScript
+  - JQuery(Ajax)
+  - [Twitter Bootstrap 1.4.0](https://getbootstrap.com/1.4.0/)
 
 
 - Server side
- - Python flask
- - [EAST text detection](https://arxiv.org/pdf/1704.03155v2.pdf)
- - [tesseract OCR](https://github.com/tesseract-ocr/tesseract/blob/master/doc/tesseract.1.asc)
+  - Python flask
+  - [EAST text detection](https://arxiv.org/pdf/1704.03155v2.pdf)
+  - [tesseract OCR](https://github.com/tesseract-ocr/tesseract/blob/master/doc/tesseract.1.asc)
 
 
 ## Required packages
 
 - **Python 3.7**
-
- - OpenCV 4.1
- - Numpy 1.16
- - pytesseract
- - PIL 6.1
+  - OpenCV 4.1
+  - Numpy 1.16
+  - pytesseract
+  - PIL 6.1
 
 
 - **tesseract OCR v4**
-
- - For Ubuntu:
- ```
+  - For Ubuntu:
+  ```
    $ sudo apt-get install tesseract-ocr
    $ sudo apt-get install libtesseract-dev
    $ sudo apt-get install tesseract-ocr-jpn  # for Japanese language
- ```
- - For Windows:
+  ```
+  - For Windows:
 
-    Get the installer from https://github.com/UB-Mannheim/tesseract/wiki
+     Get the installer from https://github.com/UB-Mannheim/tesseract/wiki
 
 - **C++ compiler** (for Ubuntu)
 
-  - build-essential:
-  ```
+   - build-essential:
+   ```
    $ sudo apt-get install build-essential
-  ```
+   ```
 
 ## Source
 
