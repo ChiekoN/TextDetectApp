@@ -8,7 +8,7 @@ import base64 # to decode MIME base64 encoded by canvas.toDataURI() in JavaScrip
 import mimetypes
 
 from textdetect import textdetect as td
-from database import search_items, find_item
+
 
 app = Flask(__name__)
 
