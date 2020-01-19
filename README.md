@@ -76,6 +76,6 @@ Open a browser, and access **"localhost:5000"**.
 
 ## Note
 
-I tested on *Linux(Ubuntu 18.4)* and *Google Chrome(v 79)* in a local network environment. In the case of use which should accept accesses on the internet, it's necessary to setup SSH connection, otherwise the web camera won't be accessible.
+I tested on *Linux(Ubuntu 18.4)* and *Google Chrome(v 79)* in a local network environment. In the case of use which should accept accesses on the internet, it's necessary to setup HTTPS connection, otherwise the web camera won't be accessible.
 
 When I started to think of this project, I was heavily inspired by this tutorial: ["OpenCV OCR and text recognition with Tesseract" in PyImageSearch](https://www.pyimagesearch.com/2018/09/17/opencv-ocr-and-text-recognition-with-tesseract/). I learned a lot from this and related posts. This is one of the greatest blogs and I always go to there when I want to learn something about handling images!
