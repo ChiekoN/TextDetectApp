@@ -3,9 +3,11 @@ function loadCamera() {
     // Erase 'disp-area2' and initialize other information
     document.getElementById('disp-area2').style.display = "none";
     var resultList = document.getElementById('result-list');
-    while (resultList.firstChild) {
-        console.log("resultList = " + resultList.firstChild);
-        resultList.removeChild(resultList.firstChild);
+    if (resultList.hasChildNodes()) {
+        while (resultList.firstChild) {
+            console.log("resultList = " + resultList.firstChild);
+            resultList.removeChild(resultList.firstChild);
+        }
     }
     
     // Prepare user camera
